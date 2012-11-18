@@ -1,28 +1,29 @@
 package com.nfcApp.beertap;
 
+
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 
-public class MainActivity extends Activity {
+public class BeerTapMenu extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_menu);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_main, menu);
+        getMenuInflater().inflate(R.menu.activity_menu, menu);
         return true;
     }
     
-    public void onClickDummyRead(View view)
+    public void onClickPlaceOrder(View view)
     {
-		Intent intent_gotoMenu = new Intent(this, BeerTapMenu.class);
+		Intent intent_summary = new Intent(this, Summary.class);
 		
 		/*
 		 *  Put Current order details in the "putExtra" given below
@@ -30,7 +31,7 @@ public class MainActivity extends Activity {
 		//intent_DisplayToDo.putExtra("CurrentUserObject", user);
 		
 		// Call next screen to display User ToDO list
-		startActivity(intent_gotoMenu);
+		startActivity(intent_summary);
     	
     }
 }
